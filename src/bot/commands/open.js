@@ -15,8 +15,8 @@ module.exports = {
                 message.channel.send({
                     embed: {
                         color: 0xFF0000,
-                        title: `**❌ | Error**`,
-                        description: `You already have a ticket open before`
+                        title: `**ERROR**`,
+                        description: `You currently have a ticket opened!`
                     }
                 }).then(async function(m) {
                     setTimeout(() => {
@@ -30,8 +30,8 @@ module.exports = {
                 message.channel.send({
                     embed: {
                         color: 0xFF0000,
-                        title: `**❌ | Error**`,
-                        description: `You have to setup the ticket system with this command: \`${prefix}setup\``
+                        title: `**ERROR`,
+                        description: `Please use \`${prefix}setup\``
                     }
                 }).then(async function(m) {
                     setTimeout(() => {
@@ -53,8 +53,8 @@ module.exports = {
                 .addComponent(btn2);
             message.channel.send({
                 embed: {
-                    title: `**⚠️ | Confirmation**`,
-                    description: `Are you sure about create a new ticket?`,
+                    title: `**WARNING**`,
+                    description: `Are you sure you want to create a new ticket?`,
                     color: 0xFFF200
                 },
                 component: row

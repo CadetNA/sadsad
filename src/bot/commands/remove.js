@@ -7,8 +7,8 @@ module.exports = {
         if (!message.channel.name.includes("ticket-")) {
             message.channel.send({
                 embed: {
-                    title: `**❌ | Error**`,
-                    description: `This is not a ticket channel`,
+                    title: `**ERROR*`,
+                    description: `This channel is not for tickets.`,
                     color: 0xFF0000
                 }
             }).then(async function(msg) {
@@ -21,8 +21,8 @@ module.exports = {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) {
             message.channel.send({
                 embed: {
-                    title: `**❌ | Error**`,
-                    description: `you need same permissions to use this command`,
+                    title: `**ERROR**`,
+                    description: `You do not have the needed permissions.`,
                     color: 0xFF0000
                 }
             }).then(async function(msg) {
@@ -44,8 +44,8 @@ module.exports = {
         }]).then(() => {
             message.channel.send({
                 embed: {
-                    title: '✅ | Done',
-                    description: `the ticket permission has been rested to default`,
+                    title: 'Done',
+                    description: `The ticket has been reset.`,
                     color: 0x00D700
                 }
             }).then(async function(msg) {

@@ -7,8 +7,8 @@ module.exports = {
         if (!message.channel.name.includes("ticket-")) {
             message.channel.send({
                 embed: {
-                    title: `**❌ | Error**`,
-                    description: `This is not a ticket channel`,
+                    title: `**ERROR**`,
+                    description: `This channel is not for tickets.`,
                     color: 0xFF0000
                 }
             }).then(async function(msg) {
@@ -21,8 +21,8 @@ module.exports = {
         if (!message.member.hasPermission('MANAGE_CHANNELS')) {
             message.channel.send({
                 embed: {
-                    title: `**❌ | Error**`,
-                    description: `you need same permissions to use this command`,
+                    title: `**ERROR**`,
+                    description: `You don't have the needed permissions.`,
                     color: 0xFF0000
                 }
             }).then(async function(msg) {
@@ -42,8 +42,8 @@ module.exports = {
         if (!args[0]) {
             message.channel.send({
                 embed: {
-                    title: `**❌ | Error**`,
-                    description: `you have to specify the role/member you wont to make him join's the ticket!`,
+                    title: `**ERROR**`,
+                    description: `You must mention the member to join the ticket`,
                     color: 0xFF0000
                 }
             }).then(async function(msg) {
@@ -75,8 +75,8 @@ module.exports = {
         }]).then(() => {
             message.channel.send({
                 embed: {
-                    title: '✅ | Done',
-                    description: `${txt} has been added to this ticket`,
+                    title: 'DONE',
+                    description: `${txt} has been added.`,
                     color: 0x00D700
                 }
             }).then(async function(msg) {

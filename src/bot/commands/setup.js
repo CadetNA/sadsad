@@ -15,8 +15,8 @@ module.exports = {
             if (!adminRole) {
                 message.channel.send({
                     embed: {
-                        title: `❌ | Wrong use`,
-                        description: `⚠ | correct use: ${prefix}setup <Ticket Channel> <Admins Role> <Ticket Message Title>`,
+                        title: `Incorrect usage.`,
+                        description: `Please use the !help command to fix your command usage.`,
                         color: 0xFF0000
                     }
                 }).then(async function(msg) {
@@ -36,7 +36,7 @@ module.exports = {
             ticketChannel.send({
                 embed: {
                     color: 0xFFED00,
-                    description: 'React with "✅" to create a ticket',
+                    description: 'React with "✅" to open a ticket',
                     title: title
                 },
                 component: row

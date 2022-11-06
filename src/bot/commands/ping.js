@@ -6,25 +6,24 @@ module.exports = {
     aliases: ["ping"],
     run: async(client, message) => {
         try {
-            var states = "🟢 Excellent";
-            var states2 = "🟢 Excellent";
+            var states = "🟢 Amazing!";
+            var states2 = "🟢 Amazing!";
             var msg = `${Date.now() - message.createdTimestamp}`;
             var api = `${Math.round(client.ws.ping)}`;
-            if (Number(msg) > 70) states = "🟢 Good";
-            if (Number(msg) > 170) states = "🟡 Not Bad";
-            if (Number(msg) > 350) states = "🔴 Soo Bad";
-            if (Number(api) > 70) states2 = "🟢 Good";
-            if (Number(api) > 170) states2 = "🟡 Not Bad";
-            if (Number(api) > 350) states2 = "🔴 Soo Bad";
+            if (Number(msg) > 70) states = "🟢 Okay";
+            if (Number(msg) > 170) states = "🟡 Bad";
+            if (Number(msg) > 350) states = "🔴 Terrible";
+            if (Number(api) > 70) states2 = "🟢 Okay";
+            if (Number(api) > 170) states2 = "🟡 Bad";
+            if (Number(api) > 350) states2 = "🔴 Terrible";
             if (message.author.bot) return;
             message.channel.send(
                 new MessageEmbed()
-                .setColor("#2F3136")
+                .setColor("#362f36")
                 .setAuthor(message.author.username, message.author.avatarURL())
-                .addField("**Time Taken:**", msg + " ms 📶 | " + states, true)
-                .addField("**WebSocket:**", api + " ms 📶 | " + states2, true)
+                .addField("**Response Time:**", msg + " ms 📶 | " + states, true)
                 .setTimestamp()
-                .setFooter(`Request By ${message.author.tag}`)
+                .setFooter(`Requested By ${message.author.tag}`)
             );
         } catch (err) {
             return;

@@ -10,8 +10,8 @@ module.exports = {
             if (!message.channel.name.includes("ticket-")) {
                 message.channel.send({
                     embed: {
-                        title: `**❌ | Error**`,
-                        description: `This is not a ticket channel`,
+                        title: `**ERROR**`,
+                        description: `This channel is not for tickets.`,
                         color: 0xFF0000
                     }
                 }).then(async function(msg) {
@@ -34,8 +34,8 @@ module.exports = {
                 .addComponent(btn2);
             message.channel.send({
                 embed: {
-                    title: `**⚠️ | Confirmation**`,
-                    description: `Are you sure about closing this ticket?`,
+                    title: `**WARNING**`,
+                    description: `Are you sure you would like to delete this ticket?`,
                     color: 0xFFF200
                 },
                 component: row

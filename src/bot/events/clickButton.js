@@ -10,8 +10,8 @@ module.exports = async function(client, button) {
                     button.channel.send({
                         embed: {
                             color: 0xFF0000,
-                            title: `**❌ | Error**`,
-                            description: `You already have a ticket open before`
+                            title: `**ERROR**`,
+                            description: `You currently have a ticket open.`
                         }
                     }).then(async function(m) {
                         setTimeout(() => {
@@ -44,8 +44,8 @@ module.exports = async function(client, button) {
                         .addComponent(btn);
                     channel.send(`<@${button.clicker.user.id}>`, {
                         embed: {
-                            description: `Please wait for a **ADMIN** response!!
-                    Press **"🔒"** to close this ticket`,
+                            description: `Please wait for a staff member.
+                    Click **"🔒"** to close this ticket`,
                             color: 0x2F3136
                         },
                         component: row
@@ -71,7 +71,7 @@ module.exports = async function(client, button) {
                 ]);
                 button.channel.send({
                     embed: {
-                        description: `Ticket has been Closed By <@!${button.clicker.user.id}>`,
+                        description: `Ticket was closed By <@!${button.clicker.user.id}>`,
                         color: 0xFFE700
                     }
                 }).then(async function(m) {
@@ -105,7 +105,7 @@ module.exports = async function(client, button) {
                 require('quick.db').delete(`TicketControl_${button.channel.id}`);
                 button.channel.send({
                     embed: {
-                        description: 'Ticket will be deleted in a few seconds',
+                        description: 'Ticket is deleting...',
                         color: 0xFF0000
                     }
                 });
@@ -143,7 +143,7 @@ module.exports = async function(client, button) {
                 require('quick.db').delete(`TicketControl_${button.channel.id}`);
                 button.channel.send({
                     embed: {
-                        description: 'Ticket will be deleted in a few seconds',
+                        description: 'Ticket is deleting...',
                         color: 0xFF0000
                     }
                 });
@@ -189,7 +189,7 @@ module.exports = async function(client, button) {
                         .addComponent(btn);
                     channel.send(`<@${button.clicker.user.id}>`, {
                         embed: {
-                            description: `Please wait for a **ADMIN** response!!
+                            description: `Please wait for a staff member
                     Press **"🔒"** to close this ticket`,
                             color: 0x2F3136
                         },
@@ -207,7 +207,7 @@ module.exports = async function(client, button) {
                 button.channel.send({
                             embed: {
                                 title: '✅',
-                                description: `this ticket name has been renamed to \`${require('quick.db').fetch(`RenameTicket_${button.channel.id}`)}\``,
+                                description: `This ticket name has been renamed to \`${require('quick.db').fetch(`RenameTicket_${button.channel.id}`)}\``,
                     color: 0x00D700
                 }
             })
